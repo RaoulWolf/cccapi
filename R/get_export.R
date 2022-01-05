@@ -1,5 +1,5 @@
-#' @title GET the SDF Export for a CAS Registry Number
-#' @description This function performs a query to retrieve a SDF file for a CAS
+#' @title GET the MOL Export for a CAS Registry Number
+#' @description This function performs a query to retrieve a MOL file for a CAS
 #'   Registry Number.
 #' @param cas_rn (Character) CAS Registry Number in "dash" format, e.g.,
 #'   "50-78-2".
@@ -7,7 +7,7 @@
 #'   Currently only \code{FALSE} is supported.
 #' @details The function performs a sanity check on the provided CAS Registry
 #'   Number and then performs a query. If successful, a character string with
-#'   the available SDF file will be returned.
+#'   the available MOL file will be returned.
 #' @return Returns a character string.
 #' @author Raoul Wolf (\url{https://github.com/RaoulWolf/})
 #' @examples \dontrun{
@@ -19,7 +19,11 @@
 get_export <- function(cas_rn, attachment = FALSE) {
 
   if (isFALSE(.check_cas(cas_rn))) {
-    return(as.character(NULL))
+    return("")
+  }
+
+  if (!isFALSE(attachment)) {
+    attachment <- FALSE
   }
 
   cas <- gsub(pattern = "-", replacement = "", cas_rn)

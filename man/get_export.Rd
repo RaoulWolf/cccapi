@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_export.R
 \name{get_export}
 \alias{get_export}
-\title{GET the SDF Export for a CAS Registry Number}
+\title{GET the MOL Export for a CAS Registry Number}
 \usage{
 get_export(cas_rn, attachment = FALSE)
 }
@@ -17,13 +17,13 @@ Currently only \code{FALSE} is supported.}
 Returns a character string.
 }
 \description{
-This function performs a query to retrieve a SDF file for a CAS
+This function performs a query to retrieve a MOL file for a CAS
   Registry Number.
 }
 \details{
 The function performs a sanity check on the provided CAS Registry
   Number and then performs a query. If successful, a character string with
-  the available SDF file will be returned.
+  the available MOL file will be returned.
 }
 \examples{
 \dontrun{

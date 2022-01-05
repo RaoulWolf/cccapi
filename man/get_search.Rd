@@ -29,6 +29,10 @@ The function performs a sanity check on the provided search term
   and then performs a query. If successful, a list with the available
   information will be returned.
 }
+\note{
+When searching for an InChIKey, the prefix \code{"InChIKey="} needs to
+  be added.
+}
 \examples{
 \dontrun{
 q <- "Aspi*"

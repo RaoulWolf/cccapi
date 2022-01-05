@@ -18,7 +18,7 @@
 get_detail <- function(cas_rn, uri = NULL) {
 
   if (isFALSE(.check_cas(cas_rn))) {
-    return(list(NULL))
+    return(list())
   }
 
   url <- paste0("commonchemistry.cas.org/api/detail?cas_rn=", cas_rn)

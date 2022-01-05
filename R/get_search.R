@@ -11,6 +11,8 @@
 #' @details The function performs a sanity check on the provided search term
 #'   and then performs a query. If successful, a list with the available
 #'   information will be returned.
+#' @note When searching for an InChIKey, the prefix \code{"InChIKey="} needs to
+#'   be added.
 #' @return Returns a list.
 #' @author Raoul Wolf (\url{https://github.com/RaoulWolf/})
 #' @examples \dontrun{
@@ -24,7 +26,7 @@
 get_search <- function(q, offset = NULL, size = NULL) {
 
   if (!is.character(q)) {
-    return(list(NULL))
+    return(list())
   }
 
   url <- utils::URLencode(paste0("commonchemistry.cas.org/api/search?q=", q))
