@@ -19,6 +19,7 @@
 #' }
 #' @importFrom curl curl_fetch_memory handle_setheaders handle_setopt new_handle
 #' @importFrom jsonlite fromJSON
+#' @importFrom utils URLencode
 #' @export
 get_search <- function(q, offset = NULL, size = NULL) {
 
@@ -26,7 +27,7 @@ get_search <- function(q, offset = NULL, size = NULL) {
     return(list(NULL))
   }
 
-  url <- URLencode(paste0("commonchemistry.cas.org/api/search?q=", q))
+  url <- utils::URLencode(paste0("commonchemistry.cas.org/api/search?q=", q))
 
   handle <- curl::new_handle()
 
