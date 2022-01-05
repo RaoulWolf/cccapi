@@ -26,7 +26,7 @@ get_search <- function(q, offset = NULL, size = NULL) {
     return(list(NULL))
   }
 
-  url <- paste0("commonchemistry.cas.org/api/search?q=", q)
+  url <- URLencode(paste0("commonchemistry.cas.org/api/search?q=", q))
 
   handle <- curl::new_handle()
 

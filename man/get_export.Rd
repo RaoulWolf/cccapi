@@ -11,7 +11,7 @@ get_export(cas_rn, attachment = FALSE)
 "50-78-2".}
 
 \item{attachment}{(Logical) Should the result be returned as attachment?
-Currently only \code(FALSE) is supported.}
+Currently only \code{FALSE} is supported.}
 }
 \value{
 Returns a character string.

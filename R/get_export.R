@@ -4,7 +4,7 @@
 #' @param cas_rn (Character) CAS Registry Number in "dash" format, e.g.,
 #'   "50-78-2".
 #' @param attachment (Logical) Should the result be returned as attachment?
-#'   Currently only \code(FALSE) is supported.
+#'   Currently only \code{FALSE} is supported.
 #' @details The function performs a sanity check on the provided CAS Registry
 #'   Number and then performs a query. If successful, a character string with
 #'   the available SDF file will be returned.
