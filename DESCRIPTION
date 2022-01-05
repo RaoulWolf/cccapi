@@ -1,0 +1,11 @@
+Package: cccapi
+Type: Package
+Title: Access the CAS Common Chemistry API Services
+Version: 0.0.1
+Author: Raoul Wolf
+Maintainer: Raoul Wolf <raoul.wolf@ngi.no>
+Description: cccapi provides access to the CAS Common Chemistry API services.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
