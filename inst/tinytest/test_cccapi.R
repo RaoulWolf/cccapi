@@ -6,6 +6,11 @@ expect_equal(
   0L
   )
 
+expect_equal(
+  length(get_detail("50-78-2")),
+  15L
+)
+
 # get_export()
 
 expect_equal(
@@ -13,11 +18,21 @@ expect_equal(
   0L
 )
 
+expect_equal(
+  nchar(get_export("50-78-2")),
+  1289L
+)
+
 # get_search()
 
 expect_equal(
   length(unlist(get_search(NA))),
   0L
+)
+
+expect_equal(
+  length(get_search("Aspirin")),
+  2L
 )
 
 # .check_cas()
@@ -31,7 +46,7 @@ expect_false(
 )
 
 expect_false(
-  cccapi:::.check_cas("50-78-21")
+  cccapi:::.check_cas("50-78")
 )
 
 expect_false(
