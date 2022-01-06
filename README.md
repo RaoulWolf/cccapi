@@ -6,6 +6,10 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/RaoulWolf/cccapi/workflows/R-CMD-check/badge.svg)](https://github.com/RaoulWolf/cccapi/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/RaoulWolf/cccapi/branch/master/graph/badge.svg)](https://app.codecov.io/gh/RaoulWolf/cccapi?branch=master)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 The goal of cccapi is to provide a minimal interface to the CAS Common
