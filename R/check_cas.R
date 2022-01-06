@@ -4,13 +4,17 @@
     return(FALSE)
   }
 
-  if (grepl(pattern = "[[:alpha:]]", cas_rn)) {
+  if (nchar(gsub(pattern = "[^-]", replacement = "", cas_rn)) != 2) {
     return(FALSE)
   }
 
   cas <- gsub(pattern = "-", replacement = "", cas_rn)
 
-  if (nchar(cas) < 5) {
+  if (grepl(pattern = "[^[:digit:]]", cas)) {
+    return(FALSE)
+  }
+
+  if (nchar(cas) < 5 || nchar(cas) > 10) {
     return(FALSE)
   }
 

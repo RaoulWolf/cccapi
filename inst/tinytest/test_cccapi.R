@@ -19,7 +19,7 @@ expect_equal(
 )
 
 expect_equal(
-  nchar(get_export("50-78-2")),
+  nchar(get_export("50-78-2", attachment = TRUE)),
   1289L
 )
 
@@ -46,7 +46,15 @@ expect_false(
 )
 
 expect_false(
+  cccapi:::.check_cas("50-78-1.1")
+)
+
+expect_false(
   cccapi:::.check_cas("50-78")
+)
+
+expect_false(
+  cccapi:::.check_cas("12345650-78-2")
 )
 
 expect_false(
