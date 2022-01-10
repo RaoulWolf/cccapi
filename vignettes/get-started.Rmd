@@ -1,0 +1,104 @@
+---
+title: "Get Started With cccapi"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get Started With cccapi}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This vignette will demonstrate the basic functionality of cccapi and provides 
+example code to work with SVG and MOL files.
+
+## Installing and loading cccapi
+
+cccapi can be installed from GitHub with the following command:
+
+```{r install}
+#| eval = FALSE
+
+install.packages("devtools")
+remotes::install_github("RaoulWolf/cccapi")
+```
+
+The package can be loaded like any other R package: 
+
+```{r setup}
+library(cccapi)
+```
+
+
+## Searching for "Aspirin"
+
+You might want to search for a substance, say Aspirin. This can be done with 
+the `get_search()` function. 
+
+```{r search}
+aspirin_search <- get_search(q = "Aspirin")
+
+str(aspirin_search)
+```
+
+The returned list contains, among other things, the CAS Registry Number 
+associated with Aspirin in `aspirin_search$results$rn`. This can be used to 
+retrieve more details.
+
+
+## Aspirin details
+
+The details for the Aspirin entry can be retrieved using the `get_detail()`
+function.
+
+```{r detail}
+aspirin_detail <- get_detail(cas_rn = aspirin_search$results$rn)
+
+str(aspirin_detail)
+```
+
+We now have access to the SVG file and know that a MOL file exists!
+
+
+## Saving and looking at SVG image files
+
+The downloaded picture can saved with the `writeLines()` function. 
+
+```{r svg1}
+writeLines(text = aspirin_detail$image, con = "aspirin.svg")
+```
+
+The SVG can also be read with, for example, the `image_read_svg()` function of 
+the [magick](https://cran.r-project.org/web/packages/magick/index.html) 
+package. This function requires the 
+[rsvg](https://cran.r-project.org/web/packages/rsvg/index.html) package. 
+
+```{r svg2}
+aspirin_image <- magick::image_read_svg(aspirin_detail$image)
+
+aspirin_image
+```
+
+
+## Writing MOL files
+
+When a MOL file is available, it can be downloaded with the `get_export()`
+function. To write the MOL file, the `writeLines()` function can be used.
+
+```{r mol}
+aspirin_mol <- get_export(cas_rn = aspirin_search$results$rn)
+
+str(aspirin_mol)
+
+writeLines(text = aspirin_mol, con = "aspirin.mol")
+
+readLines(con = "aspirin.mol")
+```
+

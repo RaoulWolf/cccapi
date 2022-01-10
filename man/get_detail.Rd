@@ -4,10 +4,13 @@
 \alias{get_detail}
 \title{GET Details for a CAS Registry Number}
 \usage{
-get_detail(cas_rn, uri = NULL)
+get_detail(cas_rn, json = FALSE, uri = NULL)
 }
 \arguments{
 \item{cas_rn}{(Character) CAS Registry Number with dashes, e.g., "50-78-2".}
+
+\item{json}{(Logical) Should the result be returned as JSON? Defaults to
+\code{FALSE}.}
 
 \item{uri}{(NULL) Currently not implemented.}
 }

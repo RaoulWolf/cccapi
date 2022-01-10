@@ -14,12 +14,12 @@
 #' cas_rn <- "50-78-2"
 #' get_export(cas_rn)
 #' }
-#' @importFrom curl curl_fetch_memory handle_setheaders handle_setopt new_handle
+#' @importFrom curl curl_fetch_memory handle_setopt new_handle
 #' @export
 get_export <- function(cas_rn, attachment = FALSE) {
 
   if (isFALSE(.check_cas(cas_rn))) {
-    return("")
+    return("Invalid CAS Registry Number.")
   }
 
   if (!isFALSE(attachment)) {
@@ -37,7 +37,6 @@ get_export <- function(cas_rn, attachment = FALSE) {
   handle <- curl::new_handle()
 
   curl::handle_setopt(handle = handle, customrequest = "GET")
-  curl::handle_setheaders(handle = handle)
 
   result <- curl::curl_fetch_memory(url = url, handle = handle)
 

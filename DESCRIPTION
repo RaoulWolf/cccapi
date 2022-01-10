@@ -1,24 +1,30 @@
 Package: cccapi
 Type: Package
 Title: Access the CAS Common Chemistry API Services
-Version: 0.0.2
-Author: Raoul Wolf
-Maintainer: Raoul Wolf <raoul.wolf@ngi.no>
-Description: cccapi provides access to the CAS Common Chemistry API services.
+Version: 0.0.3
+Authors@R: 
+    c(person(given = "Raoul",
+             family = "Wolf",
+             role = c("aut", "cre"),
+             email = "raoul.wolf@ngi.no",
+             comment = c(ORCID = "0000-0001-5971-8525")))
+Description: The cccapi package provides lightweight access to the CAS Common 
+    Chemistry API services.
 License: MIT + file LICENSE
-Depends: R (>= 3.1.0)
+Depends: R (>= 3.0.0)
 Imports: 
     curl, 
     jsonlite,
     utils
 Suggests: 
+    knitr,
     covr,
     magick,
     rmarkdown,
     rsvg,
     tinytest
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 7.1.2
 URL: https://github.com/RaoulWolf/cccapi
 BugReports: https://github.com/RaoulWolf/cccapi/issues
+VignetteBuilder: knitr

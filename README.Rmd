@@ -4,7 +4,9 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r}
+#| include = FALSE
+
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -21,39 +23,61 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of cccapi is to provide a minimal interface to the CAS Common Chemistry API services (https://www.cas.org/services/commonchemistry-api). 
+The goal of the cccapi package is to provide a minimal and lightweight 
+interface to the [CAS Common Chemistry](https://commonchemistry.cas.org/) API 
+services. To get access to the API services, you need to register at
+[https://www.cas.org/services/commonchemistry-api](https://www.cas.org/services/commonchemistry-api). 
+
+The dependencies of cccapi are kept at a bare minimum: 
+[curl](https://cran.r-project.org/web/packages/curl/index.html) for handling 
+the API requests and 
+[jsonlite](https://cran.r-project.org/web/packages/jsonlite/index.html) to 
+parse data from JSON format.
 
 ## Installation
 
-You can install the development version of cccapi from [GitHub](https://github.com/) with:
+You can install the development version of cccapi from 
+[GitHub](https://github.com/) with:
 
-```{r install,eval=FALSE}
+```{r install}
+#| eval = FALSE
+
 # install.packages("devtools")
 remotes::install_github("RaoulWolf/cccapi")
 ```
 
 ## Examples
 
-This is an example which shows you how to get the record details for a CAS Registry Number. In this case, for aspirin:
+This is an example which shows you how to get the record details for a CAS 
+Registry Number. In this case, for aspirin:
 
-```{r example1,eval=FALSE}
+```{r example1}
+#| eval = FALSE
+
 library(cccapi)
 cas_rn <- "50-78-2"
 get_detail(cas_rn)
 ```
 
-Here is an example which shows you how to get the SDF file for a CAS Registry Number. In this case, again, for aspirin:
+Here is an example which shows you how to get the MOL file for a CAS Registry 
+Number. In this case, again, for aspirin:
 
-```{r example2,eval=FALSE}
+```{r example2}
+#| eval = FALSE
+
 library(cccapi)
 cas_rn <- "50-78-2"
 get_export(cas_rn)
 ```
 
-And finally, here is an example which shows you how to search for CAS Registry Numbers with a partial name. See `?get_search` for details on the available search options! 
+And finally, here is an example which shows you how to search for CAS Registry 
+Numbers with a partial name. See `?get_search` for details on the available 
+search options! 
 
-```{r example3,eval=FALSE}
+```{r example3}
+#| eval = FALSE
+
 library(cccapi)
-q <- "Aspir*"
+q <- "Aspiri*"
 get_search(q)
 ```

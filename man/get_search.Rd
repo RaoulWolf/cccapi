@@ -4,7 +4,7 @@
 \alias{get_search}
 \title{GET Search Results for a CAS Registry Number and Other Identifiers}
 \usage{
-get_search(q, offset = NULL, size = NULL)
+get_search(q, json = FALSE, offset = NULL, size = NULL)
 }
 \arguments{
 \item{q}{(Character) The (partial) search term. The following search terms
@@ -12,6 +12,9 @@ are supported: CAS Registry Number (with or without dashes), SMILES
 (canonical or isomeric), InChI (with or without the "InChI=" prefix),
 InChIKey, and name. Searching by name allows use of a trailing wildcard
 (e.g., car*). All searches are case-insensitive.}
+
+\item{json}{(Logical) Should the result be returned as JSON? Defaults to
+\code{FALSE}.}
 
 \item{offset}{(NULL) Currently not implemented.}
 
@@ -35,7 +38,7 @@ When searching for an InChIKey, the prefix \code{"InChIKey="} needs to
 }
 \examples{
 \dontrun{
-q <- "Aspi*"
+q <- "Aspiri*"
 get_search(q)
 }
 }

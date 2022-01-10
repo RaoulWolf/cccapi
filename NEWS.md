@@ -1,10 +1,17 @@
+# cccapi 0.0.3 (2022-01-07)
+
+* Added logical `json` parameter to `get_detail()` and `get_search()` to 
+  retrieve the original JSON as returned from the API (*i.e.*, skipping the 
+  `jsonlite::from_json()` parsing). The default value is `FALSE`. 
+* Added the "Get Started with cccapi" vignette to demonstrate a basic workflow.
+
 # cccapi 0.0.2 (2022-01-06)
 
 * Basic support for the three main functions: `get_detail()`, `get_export()`
   and `get_search()`. 
 * Implemented internal functionality to sanity-check CAS Registry Numbers 
   before running queries: `.check_cas()`.  
-* Added continuous integration via GitHub Actions.
+* Added continuous integration *via* GitHub Actions.
 * Added tests via {tinytest} and added it to suggestions.
 * Added coverage via {covr} and added it to suggestions.
 * Added {magick} and {rsvg} to suggestions to work with SVG files. 

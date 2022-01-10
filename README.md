@@ -12,9 +12,17 @@ coverage](https://codecov.io/gh/RaoulWolf/cccapi/branch/master/graph/badge.svg)]
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of cccapi is to provide a minimal interface to the CAS Common
-Chemistry API services
-(<https://www.cas.org/services/commonchemistry-api>).
+The goal of the cccapi package is to provide a minimal and lightweight
+interface to the [CAS Common
+Chemistry](https://commonchemistry.cas.org/) API services. To get access
+to the API services, you need to register at
+<https://www.cas.org/services/commonchemistry-api>.
+
+The dependencies of cccapi are kept at a bare minimum:
+[curl](https://cran.r-project.org/web/packages/curl/index.html) for
+handling the API requests and
+[jsonlite](https://cran.r-project.org/web/packages/jsonlite/index.html)
+to parse data from JSON format.
 
 ## Installation
 
@@ -37,7 +45,7 @@ cas_rn <- "50-78-2"
 get_detail(cas_rn)
 ```
 
-Here is an example which shows you how to get the SDF file for a CAS
+Here is an example which shows you how to get the MOL file for a CAS
 Registry Number. In this case, again, for aspirin:
 
 ``` r
@@ -52,6 +60,6 @@ the available search options!
 
 ``` r
 library(cccapi)
-q <- "Aspir*"
+q <- "Aspiri*"
 get_search(q)
 ```

@@ -3,7 +3,7 @@
 
 expect_equal(
   length(unlist(get_detail(NA))),
-  0L
+  1L
   )
 
 expect_equal(
@@ -11,11 +11,16 @@ expect_equal(
   15L
 )
 
+expect_equal(
+  nchar(get_detail("50-78-2", json = TRUE)),
+  5830L
+)
+
 # get_export()
 
 expect_equal(
   nchar(get_export(NA)),
-  0L
+  28L
 )
 
 expect_equal(
@@ -27,12 +32,17 @@ expect_equal(
 
 expect_equal(
   length(unlist(get_search(NA))),
-  0L
+  1L
 )
 
 expect_equal(
   length(get_search("Aspirin")),
   2L
+)
+
+expect_equal(
+  nchar(get_search("Aspirin", json = TRUE)),
+  2782L
 )
 
 # .check_cas()
@@ -50,7 +60,7 @@ expect_false(
 )
 
 expect_false(
-  cccapi:::.check_cas("50-78")
+  cccapi:::.check_cas("50-78-")
 )
 
 expect_false(

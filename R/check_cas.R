@@ -1,6 +1,6 @@
 .check_cas <- function(cas_rn) {
 
-  if (is.na(cas_rn)) {
+  if (is.na(cas_rn) || is.null(cas_rn)) {
     return(FALSE)
   }
 
