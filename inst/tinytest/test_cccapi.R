@@ -13,7 +13,7 @@ expect_equal(
 
 expect_equal(
   nchar(get_detail("50-78-2", json = TRUE)),
-  5830L
+  5828L
 )
 
 # get_export()
