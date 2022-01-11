@@ -66,7 +66,7 @@ get_search(q)
 
 ## Acknowledgement
 
-This R package was developed as part of the project “ZeroPM: Zero
-pollution of Persistent, Mobile substances”. This project has received
-funding from the European Union’s Horizon 2020 research and innovation
-programme under grant agreement No 101036756.
+This R package was developed as part of the project [“ZeroPM: Zero
+pollution of Persistent, Mobile substances”](https://zeropm.eu/). This
+project has received funding from the European Union’s Horizon 2020
+research and innovation programme under grant agreement No 101036756.

@@ -27,7 +27,7 @@
 #' @export
 get_search <- function(q, json = FALSE, offset = NULL, size = NULL) {
 
-  if (!is.character(q) || is.na(q)) {
+  if (is.na(q) || is.null(q)) {
     return(list("message" = "Invalid search term."))
   }
 

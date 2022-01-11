@@ -12,8 +12,13 @@ expect_equal(
 )
 
 expect_equal(
-  nchar(get_detail("50-78-2", json = TRUE)),
-  ifelse(.Platform$OS.type == "windows", 5830L, 5828L)
+  typeof(get_detail("50-78-2", json = TRUE)),
+  "character"
+)
+
+expect_equal(
+  length(get_detail("50-78-2", json = "no")),
+  15L
 )
 
 # get_export()
@@ -36,13 +41,23 @@ expect_equal(
 )
 
 expect_equal(
+  length(unlist(get_search(NULL))),
+  1L
+)
+
+expect_equal(
   length(get_search("Aspirin")),
   2L
 )
 
 expect_equal(
-  nchar(get_search("Aspirin", json = TRUE)),
-  2782L
+  length(get_search("Aspirin", json = "no")),
+  2L
+)
+
+expect_equal(
+  typeof(get_search("Aspirin", json = TRUE)),
+  "character"
 )
 
 # .check_cas()
