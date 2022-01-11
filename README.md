@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# cccapi
+# cccapi <img src="man/figures/logo.png" align="right" height="136" />
 
 <!-- badges: start -->
 
@@ -63,3 +63,10 @@ library(cccapi)
 q <- "Aspiri*"
 get_search(q)
 ```
+
+## Acknowledgement
+
+This R package was developed as part of the project “ZeroPM: Zero
+pollution of Persistent, Mobile substances”. This project has received
+funding from the European Union’s Horizon 2020 research and innovation
+programme under grant agreement No 101036756.
