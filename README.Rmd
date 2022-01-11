@@ -23,6 +23,8 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
+> A [ZeroPM](https://zeropm.eu/) R package
+
 The goal of the cccapi package is to provide a minimal and lightweight 
 interface to the [CAS Common Chemistry](https://commonchemistry.cas.org/) API 
 services. To get access to the API services, you need to register at
@@ -85,6 +87,6 @@ get_search(q)
 ## Acknowledgement
 
 This R package was developed as part of the project ["ZeroPM: Zero pollution of 
-Persistent, Mobile substances"](https://zeropm.eu/). This project has received funding from the 
-European Union's Horizon 2020 research and innovation programme under grant 
-agreement No 101036756.
+Persistent, Mobile substances"](https://zeropm.eu/). This project has received 
+funding from the European Union's Horizon 2020 research and innovation 
+programme under grant agreement No 101036756.

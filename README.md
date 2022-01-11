@@ -12,6 +12,8 @@ coverage](https://codecov.io/gh/RaoulWolf/cccapi/branch/master/graph/badge.svg)]
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
+> A [ZeroPM](https://zeropm.eu/) R package
+
 The goal of the cccapi package is to provide a minimal and lightweight
 interface to the [CAS Common
 Chemistry](https://commonchemistry.cas.org/) API services. To get access
