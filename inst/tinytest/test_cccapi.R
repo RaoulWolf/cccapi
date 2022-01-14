@@ -29,7 +29,7 @@ expect_equal(
 )
 
 expect_equal(
-  nchar(get_export("50-78-2", attachment = TRUE)),
+  nchar(get_export("50-78-2")),
   1289L
 )
 

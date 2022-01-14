@@ -1,3 +1,11 @@
+# cccapi 0.0.4 (2022-01-07)
+
+* Added logo to GitHub README.
+* Removed ghost parameters from `get_detail()` and `get_search()`.
+* Updated tests to reflect the removal of ghost parameters in `get_detail()` 
+  and `get_search()`.
+* Added version badge to GitHub README. 
+
 # cccapi 0.0.3 (2022-01-07)
 
 * Added logical `json` parameter to `get_detail()` and `get_search()` to 

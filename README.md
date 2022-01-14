@@ -38,6 +38,9 @@ remotes::install_github("RaoulWolf/cccapi")
 
 ## Examples
 
+The following examples show the functionality of the three API functions
+of cccapi: `get_detail()`, `get_export()`, and `get_search()`.
+
 This is an example which shows you how to get the record details for a
 CAS Registry Number. In this case, for aspirin:
 
@@ -68,7 +71,13 @@ get_search(q)
 
 ## Acknowledgement
 
-This R package was developed as part of the project [“ZeroPM: Zero
-pollution of Persistent, Mobile substances”](https://zeropm.eu/). This
-project has received funding from the European Union’s Horizon 2020
-research and innovation programme under grant agreement No 101036756.
+This R package was developed by the EnviData initiative at the
+[Norwegian Geotechnical Institute (NGI)](https://www.ngi.no/eng) as part
+of the project [ZeroPM: Zero pollution of Persistent, Mobile
+substances](https://zeropm.eu/). This project has received funding from
+the European Union’s Horizon 2020 research and innovation programme
+under grant agreement No 101036756.
+
+If you find this package useful and can afford it, please consider
+making a donation to a humanitarian non-profit organization, such as
+[Sea-Watch](https://sea-watch.org/en/). Thank you.

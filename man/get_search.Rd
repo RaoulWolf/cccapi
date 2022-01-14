@@ -4,7 +4,7 @@
 \alias{get_search}
 \title{GET Search Results for a CAS Registry Number and Other Identifiers}
 \usage{
-get_search(q, json = FALSE, offset = NULL, size = NULL)
+get_search(q, json = FALSE)
 }
 \arguments{
 \item{q}{(Character) The (partial) search term. The following search terms
@@ -15,10 +15,6 @@ InChIKey, and name. Searching by name allows use of a trailing wildcard
 
 \item{json}{(Logical) Should the result be returned as JSON? Defaults to
 \code{FALSE}.}
-
-\item{offset}{(NULL) Currently not implemented.}
-
-\item{size}{(NULL) Currently not implemented.}
 }
 \value{
 Returns a list.

@@ -8,8 +8,6 @@
 #'   (e.g., car*). All searches are case-insensitive.
 #' @param json (Logical) Should the result be returned as JSON? Defaults to
 #'   \code{FALSE}.
-#' @param offset (NULL) Currently not implemented.
-#' @param size (NULL) Currently not implemented.
 #' @details The function performs a sanity check on the provided search term
 #'   and then performs a query. If successful, a list with the available
 #'   information will be returned.
@@ -25,13 +23,13 @@
 #' @importFrom jsonlite fromJSON
 #' @importFrom utils URLencode
 #' @export
-get_search <- function(q, json = FALSE, offset = NULL, size = NULL) {
+get_search <- function(q, json = FALSE) {
 
   if (is.na(q) || is.null(q)) {
     return(list("message" = "Invalid search term."))
   }
 
-  if (!is.logical(json)) {
+  if (!is.logical(json) || is.na(json)) {
     json <- FALSE
   }
 
@@ -39,14 +37,14 @@ get_search <- function(q, json = FALSE, offset = NULL, size = NULL) {
 
   handle <- curl::new_handle()
 
-  curl::handle_setopt(handle = handle, customrequest = "GET")
+  curl::handle_setopt(handle, customrequest = "GET")
 
-  result <- curl::curl_fetch_memory(url = url, handle = handle)
+  result <- curl::curl_fetch_memory(url, handle)
 
   content <- rawToChar(result$content)
 
   if (!json) {
-    content <- jsonlite::fromJSON(txt = content)
+    content <- jsonlite::fromJSON(content)
   }
 
   content
