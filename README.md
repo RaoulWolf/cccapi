@@ -78,6 +78,8 @@ substances](https://zeropm.eu/). This project has received funding from
 the European Union’s Horizon 2020 research and innovation programme
 under grant agreement No 101036756.
 
+------------------------------------------------------------------------
+
 If you find this package useful and can afford it, please consider
 making a donation to a humanitarian non-profit organization, such as
 [Sea-Watch](https://sea-watch.org/en/). Thank you.
