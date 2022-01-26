@@ -33,7 +33,7 @@ You can install the development version of cccapi from
 
 ``` r
 # install.packages("devtools")
-remotes::install_github("RaoulWolf/cccapi")
+remotes::install_github("ZeroPM-H2020/cccapi")
 ```
 
 ## Examples

@@ -16,26 +16,36 @@
 #' @export
 get_export <- function(cas_rn) {
 
+  # sanity-check cas_rn
   if (isFALSE(.check_cas(cas_rn))) {
     return("Invalid CAS Registry Number.")
   }
 
+  # remove cas_rn dashes
   cas <- gsub(pattern = "-", replacement = "", cas_rn)
 
+  # construct uri
   uri <- paste0("substance/pt/", cas)
 
+  # define attachment
   attachment <- paste0("&returnAsAttachment=", tolower(FALSE))
 
+  # compose url
   url <- paste0("commonchemistry.cas.org/api/export?uri=", uri, attachment)
 
+  # create new cURL handle
   handle <- curl::new_handle()
 
+  # specify GET request
   curl::handle_setopt(handle, customrequest = "GET")
 
+  # retrieve results
   result <- curl::curl_fetch_memory(url, handle)
 
+  # decode content
   content <- rawToChar(result$content)
 
+  # return content
   content
 
 }

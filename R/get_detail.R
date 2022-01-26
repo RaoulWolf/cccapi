@@ -18,28 +18,37 @@
 #' @export
 get_detail <- function(cas_rn, json = FALSE) {
 
+  # sanity-check cas_rn
   if (isFALSE(.check_cas(cas_rn))) {
     return(list("message" = "Invalid CAS Registry Number."))
   }
 
+  # sanity-check json
   if (!is.logical(json) || is.na(json)) {
     json <- FALSE
   }
 
+  # compose url
   url <- paste0("commonchemistry.cas.org/api/detail?cas_rn=", cas_rn)
 
+  # create new cURL handle
   handle <- curl::new_handle()
 
+  # specify GET request
   curl::handle_setopt(handle, customrequest = "GET")
 
+  # retrieve results
   result <- curl::curl_fetch_memory(url, handle)
 
+  # decode content
   content <- rawToChar(result$content)
 
+  # transform content
   if (!json) {
     content <- jsonlite::fromJSON(content)
   }
 
+  # return content
   content
 
 }

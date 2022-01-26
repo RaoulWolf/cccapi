@@ -1,3 +1,7 @@
+# cccapi 0.1.1 (2022-01-26)
+
+* Fixed a bug when searching for SMILES with URL-problematic characters. 
+
 # cccapi 0.1.0 (2022-01-19)
 
 * Minor bugfixes.

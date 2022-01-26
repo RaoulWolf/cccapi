@@ -25,28 +25,40 @@
 #' @export
 get_search <- function(q, json = FALSE) {
 
+  # sanity-check q
   if (is.na(q) || is.null(q)) {
     return(list("message" = "Invalid search term."))
   }
 
+  # sanity-check json
   if (!is.logical(json) || is.na(json)) {
     json <- FALSE
   }
 
-  url <- utils::URLencode(paste0("commonchemistry.cas.org/api/search?q=", q))
+  # compose url
+  url <- paste0(
+    "commonchemistry.cas.org/api/search?q=",
+    utils::URLencode(q, reserved = TRUE)
+  )
 
+  # create new cURL handle
   handle <- curl::new_handle()
 
+  # specify GET request
   curl::handle_setopt(handle, customrequest = "GET")
 
+  # retrieve results
   result <- curl::curl_fetch_memory(url, handle)
 
+  # decode content
   content <- rawToChar(result$content)
 
+  # transform content
   if (!json) {
     content <- jsonlite::fromJSON(content)
   }
 
+  # return content
   content
 
 }
