@@ -1,6 +1,7 @@
 # cccapi 0.1.2 (2022-03-22)
 
 * Safer queries in `get_search()` *via* `utils::URLencode()`.
+* Updated "Get started" vignette. 
 * Minor (non-functional) code cosmetics.
 
 # cccapi 0.1.1 (2022-01-26)

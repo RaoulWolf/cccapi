@@ -25,9 +25,8 @@ cccapi can be installed from GitHub with the following command:
 
 ```{r install}
 #| eval = FALSE
-
-install.packages("devtools")
-remotes::install_github("RaoulWolf/cccapi")
+install.packages("remotes")
+remotes::install_github("ZeroPM-H2020/cccapi")
 ```
 
 The package can be loaded like any other R package: 
@@ -37,31 +36,32 @@ library(cccapi)
 ```
 
 
-## Searching for "Aspirin"
+## Searching for "atrazine"
 
-You might want to search for a substance, say Aspirin. This can be done with 
-the `get_search()` function. 
+You might want to search for a substance, say 
+[atrazine](https://en.wikipedia.org/wiki/Atrazine). This can be done with the 
+`get_search()` function. 
 
 ```{r search}
-aspirin_search <- get_search(q = "Aspirin")
+atz_src <- get_search("atrazine")
 
-str(aspirin_search)
+str(atz_src)
 ```
 
 The returned list contains, among other things, the CAS Registry Number 
-associated with Aspirin in `aspirin_search$results$rn`. This can be used to 
+associated with atrazine in `atz_src$results$rn`. This can be used to 
 retrieve more details.
 
 
-## Aspirin details
+## Atrazine details
 
-The details for the Aspirin entry can be retrieved using the `get_detail()`
+The details for the atrazine entry can be retrieved using the `get_detail()`
 function.
 
 ```{r detail}
-aspirin_detail <- get_detail(cas_rn = aspirin_search$results$rn)
+atz_dtl <- get_detail(atz_src$results$rn)
 
-str(aspirin_detail)
+str(atz_dtl)
 ```
 
 We now have access to the SVG file and know that a MOL file exists!
@@ -72,7 +72,7 @@ We now have access to the SVG file and know that a MOL file exists!
 The downloaded picture can saved with the `writeLines()` function. 
 
 ```{r svg1}
-writeLines(text = aspirin_detail$image, con = "aspirin.svg")
+writeLines(text = atz_dtl$image, con = "atrazine.svg")
 ```
 
 The SVG can also be read with, for example, the `image_read_svg()` function of 
@@ -81,9 +81,9 @@ package. This function requires the
 [rsvg](https://cran.r-project.org/web/packages/rsvg/index.html) package. 
 
 ```{r svg2}
-aspirin_image <- magick::image_read_svg(aspirin_detail$image)
+atz_img <- magick::image_read_svg(atz_dtl$image)
 
-aspirin_image
+atz_img
 ```
 
 
@@ -93,12 +93,12 @@ When a MOL file is available, it can be downloaded with the `get_export()`
 function. To write the MOL file, the `writeLines()` function can be used.
 
 ```{r mol}
-aspirin_mol <- get_export(cas_rn = aspirin_search$results$rn)
+atz_mol <- get_export(atz_src$results$rn)
 
-str(aspirin_mol)
+str(atz_mol)
 
-writeLines(text = aspirin_mol, con = "aspirin.mol")
+writeLines(text = atz_mol, con = "atrazine.mol")
 
-readLines(con = "aspirin.mol")
+readLines(con = "atrazine.mol")
 ```
 
