@@ -1,5 +1,5 @@
 
-# get_detail()
+# test get_detail()
 
 expect_equal(
   length(unlist(get_detail(NA))),
@@ -21,7 +21,7 @@ expect_equal(
   15L
 )
 
-# get_export()
+# test get_export()
 
 expect_equal(
   nchar(get_export(NA)),
@@ -33,7 +33,7 @@ expect_equal(
   1289L
 )
 
-# get_search()
+# test get_search()
 
 expect_equal(
   length(unlist(get_search(NA))),
@@ -60,7 +60,7 @@ expect_equal(
   "character"
 )
 
-# .check_cas()
+# test .check_cas()
 
 expect_false(
   cccapi:::.check_cas(NA)

@@ -1,4 +1,5 @@
-#' @source https://www.cas.org/support/documentation/chemical-substances/checkdig
+#' @source
+#'   https://www.cas.org/support/documentation/chemical-substances/checkdig
 .check_cas <- function(cas_rn) {
 
   # sanity-check cas_rn

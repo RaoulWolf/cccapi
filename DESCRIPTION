@@ -1,7 +1,7 @@
 Package: cccapi
 Type: Package
 Title: Access the CAS Common Chemistry API Services
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     c(person(given = "Raoul",
              family = "Wolf",

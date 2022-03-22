@@ -26,7 +26,7 @@
 get_search <- function(q, json = FALSE) {
 
   # sanity-check q
-  if (is.na(q) || is.null(q)) {
+  if (missing(q) || is.na(q) || is.null(q)) {
     return(list("message" = "Invalid search term."))
   }
 
@@ -36,9 +36,10 @@ get_search <- function(q, json = FALSE) {
   }
 
   # compose url
-  url <- paste0(
-    "commonchemistry.cas.org/api/search?q=",
-    utils::URLencode(q, reserved = TRUE)
+  url <- paste(
+    "https://commonchemistry.cas.org/api/search",
+    paste("q", utils::URLencode(q, reserved = TRUE), sep = "="),
+    sep = "?"
   )
 
   # create new cURL handle
