@@ -1,3 +1,7 @@
+# cccapi 0.1.3 (2022-04-11)
+
+* Vectorized the `.check_cas()` function.  
+
 # cccapi 0.1.2 (2022-03-22)
 
 * Safer queries in `get_search()` *via* `utils::URLencode()`.
