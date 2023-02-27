@@ -43,8 +43,18 @@ get_detail <- function(cas_rn, json = FALSE) {
   # decode content
   content <- rawToChar(result$content)
 
+  # check status
+  if(result$status_code != 200L) {
+    if(json) {
+      return(content)
+    } else {
+      warning("Detail not found", call. = FALSE)
+      return(list())
+    }
+  }
+
   # transform content
-  if (!json) {
+  if(!json) {
     content <- jsonlite::fromJSON(content)
   }
 

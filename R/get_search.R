@@ -55,17 +55,16 @@ get_search <- function(q, json = FALSE) {
   content <- rawToChar(result$content)
 
   # check status
-  if (result$status_code != 200L) {
-    warning("Request unsuccessful.", call. = FALSE)
-    if (!json) {
-      return(list(NA_character_))
+  if(result$status_code != 200L) {
+    if(json) {
+      return(content)
     } else {
-      return(NA_character_)
+      return(list())
     }
   }
 
   # transform content
-  if (!json) {
+  if(!json) {
     content <- jsonlite::fromJSON(content)
   }
 

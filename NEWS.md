@@ -1,3 +1,11 @@
+# cccapi 0.1.5 (2023-02-27)
+* Non-200 status codes will now return the entire JSON string when 
+  `json = TRUE`.  
+
+# cccapi 0.1.4 (2022-10-04)
+
+* Added functionality to `get_search()` to handle non-200 request statuses.
+
 # cccapi 0.1.3 (2022-04-11)
 
 * Vectorized the `.check_cas()` function.  

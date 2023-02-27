@@ -4,11 +4,14 @@
 \alias{get_export}
 \title{GET the MOL Export for a CAS Registry Number}
 \usage{
-get_export(cas_rn)
+get_export(cas_rn, verbose = FALSE)
 }
 \arguments{
 \item{cas_rn}{(Character) CAS Registry Number in "dash" format, e.g.,
 "50-78-2".}
+
+\item{verbose}{(Logical) Should the result be returned as is? Defaults to
+\code{FALSE}.}
 }
 \value{
 Returns a character string.
